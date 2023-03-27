@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,27 +15,77 @@
         }
     </style>
 </head>
+
 <body>
     <button id="Hide">HIDE</button>
     <button id="Show">SHOW</button>
     <button id="HideShow">TOGGLE</button>
 
-    <div class="box"></div>
+    <div class="box">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officiis tempora eius reprehenderit eaque harum quam consectetur recusandae modi illo? Facere.</p>
+    </div>
 
+    <input type="text" name="fname" id="fname" placeholder="First Name">
+    <input type="text" name="lname" id="lname" placeholder="Last Name">
+    <input type="submit" id="submitbtn">
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
+
+            //get input value and print in consol
+            $("#submitbtn").click(function (){
+                var f = $("#fname").val();
+                var l = $("#lname").val();
+                
+                console.log(f, l);
+            });
+
+
+            // box hide with fadeOut
             $("#Hide").click(function () {
-                $(".box").hide();
+                // $(".box").hide();
+                $(".box").fadeOut(500);
             });
+
+            // box show with fadeIn
             $("#Show").click(function () {
-                $(".box").show();
+                // $(".box").show();
+                $(".box").fadeIn(500);
             });
+
+            // box hide and show with slidetoggle
             $("#HideShow").click(function () {
-                $(".box").toggle();
+                // $(".box").toggle();
+                $(".box").slideToggle(500);
             });
+
+            //change bg of body on mouseenter
+            $("body").mouseenter(function () {
+                $(this).css({
+                    // "background-color" : "gray",
+                    // "color" : "white"
+                });
+            });
+
+            //change bg of button on press
+            $("#Hide").mousedown(function () {
+                $(this).css("background-color","green");
+            });
+
+            //change bg of button on realise
+            $("#Hide").mouseup(function () {
+                $(this).css("background-color","red");
+            });
+
+            // give msg in console
+            $(".box").mouseenter(function () {
+                console.log("Entered!");
+            });
+
         });
     </script>
 </body>
+
 </html>
