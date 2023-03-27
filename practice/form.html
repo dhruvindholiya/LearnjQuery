@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            line-height: 110%;
+            font-weight: 400;
+        }
+
+        form {
+            padding: 50px;
+            width: 500px;
+            margin: 50px auto;
+            background-color: #d7f4fa;
+            display: flex;
+            flex-wrap: wrap;
+            border-radius: 20px;
+        }
+        .input_feild {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        input,
+        select,
+        button {
+            outline: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            padding: 15px 20px;
+            width: 100%;
+            background-color: transparent;
+            border-radius: 10px;
+            border: 2px solid #000;
+        }
+
+        input::placeholder {
+            color: #000;
+        }
+
+        button {
+            display: block;
+            max-width: 180px;
+            margin: 20px auto 0;
+            text-transform: uppercase;
+            cursor: pointer;
+            background: #000;
+            color: #d7f4fa;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="registration">
+        <div class="input_feild">
+            <input type="text" name="fname" id="fName" placeholder="First Name">
+            <span id="fname_err"></span>
+        </div>
+        <div class="input_feild">
+            <input type="text" name="age" id="Age" placeholder="Age">
+            <span id="age_err"></span>
+        </div>
+        <div class="input_feild">
+            <input type="password" name="password" id="Pass" placeholder="Password">
+            <span id="pass_err"></span>
+        </div>
+        <button type="submit" id="submitBtn">submit</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("#registration").submit(function (){
+                var fnameData = $('#fName').val();
+                var ageData = $('#Age').val();
+                var passData = $('#Pass').val();
+
+                var regFname = /^[a-zA-Z ]{2,30}$/;
+                var regPass = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+
+                if(fnameData === '') {
+                    $("#fname_err").html('Please enter your name');
+                } else if (!regFname.test(fnameData)) {
+                    $("#fname_err").html('Please enter valid name');
+                } else {
+                    $("#fname_err").html('');
+                }
+
+                if(ageData === '') {
+                    $("#age_err").html('Please enter your age');
+                } else if (isNaN(ageData)) {
+                    $("#age_err").html('Please enter valid your age');
+                } else {
+                    $("#age_err").html('');
+                }
+
+                if(passData === '') {
+                    $("#pass_err").html('Please enter password');
+                } else if (!regPass.test(passData)) {
+                    $("#pass_err").html('Please enter valid password');
+                } else {
+                    $("#pass_err").html('');
+                }
+
+                return false;
+            }); 
+        });
+    </script>
+</body>
+
+</html>
