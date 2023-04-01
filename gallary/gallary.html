@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            padding: 30px;
+            margin: 0;
+        }
+
+        .gallary {
+            width: 100%;
+            columns: 280px 3;
+            gap: 30px;
+        }
+
+        a,
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        img {
+            margin-bottom: 30px;
+            border-radius: 30px;
+            box-shadow: 0 0 10px #00000075;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Flowers</h1>
+    <div class="gallary">
+        <div class="img_box">
+            <a data-fancybox="gallery" href="../gallary/images/1.jpg">
+                <img src="../gallary/images/1.jpg" alt="">
+            </a>
+        </div>
+        <div class="img_box">
+            <a data-fancybox="gallery" href="../gallary/images/2.jpg">
+                <img src="../gallary/images/2.jpg" alt="">
+            </a>
+        </div>
+        <div class="img_box">
+            <a data-fancybox="gallery" href="../gallary/images/3.jpg">
+                <img src="../gallary/images/3.jpg" alt="">
+            </a>
+        </div>
+        <div class="img_box">
+            <a data-fancybox="gallery" href="../gallary/images/4.jpg">
+                <img src="../gallary/images/4.jpg" alt="">
+            </a>
+        </div>
+        <div class="img_box">
+            <a data-fancybox="gallery" href="../gallary/images/5.jpg">
+                <img src="../gallary/images/5.jpg" alt="">
+            </a>
+        </div>
+        <div class="img_box">
+            <a data-fancybox="gallery" href="../gallary/images/6.jpg">
+                <img src="../gallary/images/6.jpg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+        Fancybox.bind("[data-fancybox]", {
+            // Your custom options
+        });
+
+    </script>
+</body>
+
+</html>
