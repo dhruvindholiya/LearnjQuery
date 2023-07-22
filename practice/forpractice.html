@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hello, My name is Dhruvin</p>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $("p").mouseenter(function () {
+            //     $(this).css('background-color', '#ff0000');
+            // });
+            $("p").on({
+                click: function () {
+                    $(this).css({
+                        "background-color": "#000000",
+                        "color": "#FFFFFF"
+                    })
+                },
+                dblclick: function () {
+                    $(this).css({
+                        "background-color" : "#FFFFFF",
+                        "color" : "#FF0000"
+                    })
+                }
+            });
+            
+        })
+    </script>
+</body>
+</html>
