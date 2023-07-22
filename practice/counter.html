@@ -233,8 +233,8 @@
                 const el = entry.target
                 if (entry.isIntersecting && !el.classList.contains('is-visible')) {
                     counterUp(el, {
-                        duration: 6000,
-                        delay: 500,
+                        duration: 1000,
+                        delay: 10,
                     })
                     el.classList.add('is-visible')
                 }
